@@ -211,13 +211,13 @@ return {
             },
           },
         },
+        ruff = {},
         lua_ls = {
           settings = {
             Lua = {
               completion = {
                 callSnippet = 'Replace',
               },
-              telemetry = { enable = false },
               diagnostics = { disable = { 'missing-fields' } },
               format = {
                 defaultConfig = {
@@ -228,6 +228,7 @@ return {
             },
           },
         },
+        bashls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -254,7 +255,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
-        'pylsp',
+        'shellcheck',
+        'shfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
