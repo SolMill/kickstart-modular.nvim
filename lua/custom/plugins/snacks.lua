@@ -4,6 +4,12 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    terminal = {
+      win = {
+        position = 'float',
+        direction = 'float',
+      },
+    },
     dashboard = {
       enabled = true,
       preset = {
@@ -22,6 +28,16 @@ return {
         { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 2 },
         { section = 'startup' },
       },
+    },
+  },
+  keys = {
+    {
+      '\\',
+      function()
+        Snacks.terminal()
+      end,
+      desc = 'Toggle Terminal',
+      mode = { 'n' },
     },
   },
 }
