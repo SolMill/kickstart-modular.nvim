@@ -39,5 +39,12 @@ return {
       desc = 'Toggle Terminal',
       mode = { 'n' },
     },
+    {
+      '<leader>gg',
+      function()
+        Snacks.lazygit()
+      end,
+      desc = 'Lazygit',
+    },
   },
 }
